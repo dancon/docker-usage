@@ -2,6 +2,33 @@
 
 在学习 Docker 之前，首先我们应该知道 Docker 是什么，以及 Docker 的使用场景。只有了解了前两点，我们才有必要去学习怎么用 Docker.
 
+##### 目录
+
+* [什么是 Docker](#什么是-docker)
+* [Docker 的8个使用场景](#Docker-的8个使用场景)
+
+通常使用 Docker 的工作流程如下：
+
+1. 将你的应用的代码和依赖加载到 `Docker container`
+
+    > 换句话讲就是构建自己的 `Docker images`, 步骤如下：
+
+    * 编写 `Dockerfile` 来指定应用运行的环境，同时拉取你的代码。
+
+    * 如果你的应用来使用了其他的应用，那么只需要简单的通过一个 `docker-compose.yml` 配置来关联他就可以保证应用的一致性。
+
+    * 最后通过 `Dockerfile` 来构建 image, 然后通过 `Docker Machine` 来运行你的容器。
+
+2. 如果需要配置网络和存储
+
+3. Upload builds to a registry (ours, yours, or your cloud provider’s), to collaborate with your team.
+
+4. If you’re gonna need to scale your solution across multiple hosts (VMs or physical machines), plan for how you’ll set up your Swarm cluster and scale it to meet demand.
+
+    > Note: Use Universal Control Plane and you can manage your Swarm cluster using a friendly UI!
+
+5. Finally, deploy to your preferred cloud provider (or, for redundancy, multiple cloud providers) with Docker Cloud. Or, use Docker Datacenter, and deploy to your own on-premise hardware
+
 #### 什么是 Docker
 
 > Note: 以下通俗的解释来自知乎答案 <https://www.zhihu.com/question/28300645/answer/67707287>
